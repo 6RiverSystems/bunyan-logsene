@@ -6,7 +6,7 @@ A Bunyan stream for saving logs into Elasticsearch.
 ## Install
 
 ```
-npm install bunyan-elasticsearch
+npm install bunyan-elasticsearch-updated
 ```
 
 ## Logstash Template
