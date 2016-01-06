@@ -1,29 +1,27 @@
 {
-  "name": "bunyan-elasticsearch-new",
-  "version": "0.0.2",
-  "description": "A Bunyan stream for sending log data to Elasticsearch",
+  "name": "bunyan-logsene",
+  "version": "0.0.1",
+  "description": "A Bunyan stream for sending log data to Logsene",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/trozz/bunyan-elasticsearch.git"
+    "url": "git@github.com:6RiverSystems/bunyan-logsene.git"
   },
   "keywords": [
     "Bunyan",
-    "Logstash",
-    "Elasticsearch"
+    "Logsene"
   ],
-  "author": "ccowan",
+  "author": "jbcpollak",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/trozz/bunyan-elasticsearch/issues"
+    "url": "https://github.com/6RiverSystems/bunyan-logsene/issues"
   },
-  "homepage": "https://github.com/trozz/bunyan-elasticsearch",
+  "homepage": "https://github.com/6RiverSystems/bunyan-logsene",
   "dependencies": {
-    "moment": "~2.10.6",
-    "elasticsearch": "~8.2.0"
+    "logsene-js": "^1.0.5"
   },
   "devDependencies": {
     "mocha": "~1.17.1"
