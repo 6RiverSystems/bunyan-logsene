@@ -16,7 +16,7 @@ function LogseneStream(options) {
 	options = options || {};
 	this._client = options.client ||
 		new Logsene(options.token,
-			options.type || 'bunyan_logsene',
+			options.type || 'winston_logsene',
 			options.url);
 
 	Writable.call(this, options);
@@ -38,6 +38,7 @@ LogseneStream.prototype._write = function(entry, encoding, callback) {
 		// Reassign these fields so them match what Logsene expects
 		// expects to see.
 		entry['@timestamp'] = entry.time;
+
 		entry.level = levels[entry.level];
 		entry.message = entry.msg;
 		entry.host = entry.hostname;
