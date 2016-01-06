@@ -5,8 +5,11 @@ A Bunyan stream for saving logs into Logsene.
 
 ## Install
 
+The project is not yet in the npm repository.
+For now you will need to do:
+
 ```
-npm install bunyan-elasticsearch-updated
+npm install 6riversystems/bunyan-logsene
 ```
 
 ## Example
