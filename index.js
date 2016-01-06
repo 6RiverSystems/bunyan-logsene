@@ -16,8 +16,8 @@ function LogseneStream(options) {
 	options = options || {};
 	this._client = options.client ||
 		new Logsene(options.token,
-		options.type || 'bunyan_logsene',
-		options.url);
+			options.type || 'bunyan_logsene',
+			options.url);
 
 	Writable.call(this, options);
 }
