@@ -1,7 +1,7 @@
-bunyan-elasticsearch
+bunyan-logsene
 ====================
 
-A Bunyan stream for saving logs into Elasticsearch.
+A Bunyan stream for saving logs into Logsene.
 
 ## Install
 
@@ -9,34 +9,31 @@ A Bunyan stream for saving logs into Elasticsearch.
 npm install bunyan-elasticsearch-updated
 ```
 
-## Logstash Template
-
-By default Logstash will create a dynamic template that will take care of crating `.raw` fields for your data. In order to replicate this behaivor you will need to create the dynamic template manually. You will need to [download template.json](https://raw.github.com/ccowan/bunyan-elasticsearch/master/template.json) and run the following command from the same directory as that file:
-
-```
-curl -XPUT localhost:9200/_template/logstash -d @template.json
-```
-
 ## Example
 
 ```
 var bunyan = require('bunyan');
-var Elasticsearch = require('bunyan-elasticsearch');
-var esStream = new Elasticsearch({
-  indexPattern: '[logstash-]YYYY.MM.DD',
-  type: 'logs',
-  host: 'localhost:9200' 
+var Logsene = require('bunyan-logsene');
+
+var logseneStream = new Logsene({
+	token: 'da607594-3883-4f5c-9b3a-97b9703a5db2'
 });
 
 var logger = bunyan.createLogger({
   name: "My Application",
   streams: [
     { stream: process.stdout },
-    { stream: esStream }
-  ],
-  serializers: bunyan.stdSerializers
+    { stream: logseneStream }
+  ]
 });
 
 logger.info('Starting application on port %d', app.get('port'));
 ```
 
+## Based On
+
+The following projects were used to get this working:
+
+  - https://github.com/Trozz/bunyan-elasticsearch (Original Fork)
+  - https://github.com/sematext/winston-logsene (How To)
+  - https://github.com/sematext/logsene-js (Core Dependency)
