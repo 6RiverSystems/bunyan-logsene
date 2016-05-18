@@ -9,4 +9,4 @@ dependencies:
 test:
   pre:
     - mkdir -p $CIRCLE_TEST_REPORTS/mocha
-    - npm test:junit
+    - npm run test:junit
