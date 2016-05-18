@@ -1,0 +1,11 @@
+machine:
+  node:
+    version: 5.7.1
+
+dependencies:
+  pre:
+    - npm update -g npm
+
+test:
+  pre:
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit
