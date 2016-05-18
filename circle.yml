@@ -8,4 +8,5 @@ dependencies:
 
 test:
   pre:
-    - mkdir -p $CIRCLE_TEST_REPORTS/junit
+    - mkdir -p $CIRCLE_TEST_REPORTS/mocha
+    - npm test:junit
