@@ -26,12 +26,16 @@ var logger = bunyan.createLogger({
   name: "My Application",
   streams: [
     { stream: process.stdout },
-    { stream: logseneStream }
+    { stream: logseneStream,
+      type: 'raw'
+    }
   ]
 });
 
 logger.info('Starting application on port %d', app.get('port'));
 ```
+
+__NOTE__: You _must_ use the `raw` stream type.
 
 ## Based On
 

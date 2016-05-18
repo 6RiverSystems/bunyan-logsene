@@ -1,10 +1,14 @@
 {
   "name": "bunyan-logsene",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Bunyan stream for sending log data to Logsene",
-  "main": "index.js",
+  "main": "lib/bunyan_logsene.js",
   "scripts": {
-    "test": "mocha"
+    "pretest": "eslint .",
+    "test": "NODE_ENV=test istanbul cover node_modules/.bin/_mocha -- --recursive --timeout=30000",
+    "test:no-cover": "NODE_ENV=test mocha --recursive --timeout=30000",
+    "test:debug": "npm run test:no-cover -- --debug-brk",
+    "posttest": "nsp check"
   },
   "repository": {
     "type": "git",
@@ -21,9 +25,16 @@
   },
   "homepage": "https://github.com/6RiverSystems/bunyan-logsene",
   "dependencies": {
-    "logsene-js": "^1.0.5"
+    "logsene-js": "git+ssh://git@github.com:6riversystems/logsene-js.git#349850f2aaaaa87ebde9447d94c0f9ade41b881f"
   },
   "devDependencies": {
-    "mocha": "~1.17.1"
+    "bunyan": "=1.8.1",
+    "chai": "=3.5.0",
+    "eslint": "=2.10.2",
+    "eslint-config-defaults": "=9.0.0",
+    "istanbul": "=0.4.3",
+    "mocha": "=2.4.5",
+    "nsp": "=2.4.0",
+    "sinon": "=1.17.4"
   }
 }
