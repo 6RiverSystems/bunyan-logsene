@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/6RiverSystems/bunyan-logsene",
   "dependencies": {
-    "logsene-js": "git+ssh://git@github.com:6riversystems/logsene-js.git#336c716eb86e4feac04b9bdb003f92dd3296b1a5"
+    "logsene-js": "=1.0.23"
   },
   "devDependencies": {
     "bunyan": "=1.8.1",
