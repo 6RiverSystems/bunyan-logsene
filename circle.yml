@@ -7,6 +7,6 @@ dependencies:
     - npm update -g npm
 
 test:
-  pre:
+  override:
     - mkdir -p $CIRCLE_TEST_REPORTS/mocha
     - npm run test:junit
